@@ -1,43 +1,31 @@
 var d3 = require("d3");
 
-module.exports = (function(){
+var settings = require('./ic-settings');
+var init     = require('./ic-init');
 
+var margin,
+	width,
+	height,
+	svg,
+	el,
+	$el;
+var parse = d3.time.format("%b %Y").parse;
+
+module.exports = (function(){
 	var margin = {
 		top: 40,
 		right: 40,
 		bottom: 40,
 		left: 40
 	};
-	var autosize = false;
 	var width  = 960 - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
-	var parse = d3.time.format("%b %Y").parse;
-	var svg;
-	var $el;
+	var start = function(el, options){
 
-	var init = function(el, options){
+		init(options);
 
-		console.log('initialization...');
-		if(options){
-			if ('margin' in options) {
-				margin = options.margin;
-			}
-			if ('size' in options) {
-				width = options.size.width - margin.left - margin.right;
-				height = options.size.height - margin.top - margin.bottom;
-			}
-			if ('autosize' in options) {
-				autosize = options.autosize;
-			}
-		}
+		svg = d3.select(el);
 
-		if(el) {
-			$el = document.querySelector(el);
-		}
-		svg = d3.select('.charts');
-
-		console.log(width+'x'+height);
-		console.log((width + margin.left + margin.right)+'x'+(height + margin.top + margin.bottom));
 
 		var x = d3.time.scale()
 			.range([0, width]);
@@ -92,7 +80,8 @@ module.exports = (function(){
 
 			svg.append('path')
 				.attr('class', 'area')
-				.attr('fill', 'rgba(231, 106, 73, 0.8)')
+				// .attr('fill', 'rgba(231, 106, 73, 0.8)')
+				.attr('fill', 'url(#Gradient1)')
 				.attr('clip-path', 'url(#clip)')
 				.attr('d', area);
 
@@ -139,7 +128,7 @@ module.exports = (function(){
 	}
 
 	return {
-		init: init
+		start: start
 	};
 
 })();

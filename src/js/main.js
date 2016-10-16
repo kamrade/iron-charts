@@ -5,4 +5,17 @@ var settings = require("./settings");
 console.log( "d3 version is " + d3.version );
 
 var ironCharts = require('./iron-charts/iron-charts')
-ironCharts.init();
+
+var icOptions = {
+	sizes: {
+		width: 400,
+		height: 200,
+		margins: {
+			top: 10,
+			bottom: 10,
+			left: 20,
+			right: 20
+		}
+	}
+};
+ironCharts.start('.charts', icOptions);
