@@ -1,4 +1,5 @@
 var settings = require('./ic-settings');
+var d3 = require("d3");
 
 module.exports = function(options){
 	if(options){
@@ -7,21 +8,13 @@ module.exports = function(options){
 			settings.sizes.height  = options.sizes.height;
 			settings.sizes.margins = options.sizes.margins;
 		}
+		if(options.el) {
+			settings.el = options.el;
+			settings.svg = d3.select(settings.el)
+		}
 	} else {
 		console.log('Use default');
+		console.log('Make sure You set target element "options.el"');
 	}
+	return settings.svg;
 };
-
-
-// if(options){
-// 	if ('margin' in options) {
-// 		margin = options.margin;
-// 	}
-// 	if ('size' in options) {
-// 		width = options.size.width - margin.left - margin.right;
-// 		height = options.size.height - margin.top - margin.bottom;
-// 	}
-// 	if ('autosize' in options) {
-// 		autosize = options.autosize;
-// 	}
-// }

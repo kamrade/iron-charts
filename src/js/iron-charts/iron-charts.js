@@ -20,13 +20,9 @@ module.exports = (function(){
 	};
 	var width  = 960 - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
-	var start = function(el, options){
+	var start = function(options){
 
-		init(options);
-
-		svg = d3.select(el);
-
-
+		svg = init(options);
 		var x = d3.time.scale()
 			.range([0, width]);
 
