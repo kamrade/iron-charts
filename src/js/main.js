@@ -9,11 +9,11 @@ var ironCharts = require('./iron-charts/iron-charts')
 var icOptions = {
 	sizes: {
 		width: 960,
-		height: 500,
+		height: 300,
 		margins: {
-			top: 10,
-			bottom: 10,
-			left: 20,
+			top: 20,
+			bottom: 40,
+			left: 40,
 			right: 20
 		}
 	},

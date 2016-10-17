@@ -3,40 +3,21 @@ var d3 = require("d3");
 var settings = require('./ic-settings');
 var init     = require('./ic-init');
 
-var margin,
-	width,
-	height,
-	svg,
-	el,
-	$el;
+var margin, width, height, svg, el, $el, x, y, xAxis, yAxis;
 var parse = d3.time.format("%b %Y").parse;
 
 module.exports = (function(){
-	var margin = {
-		top: 40,
-		right: 40,
-		bottom: 40,
-		left: 40
-	};
-	var width  = 960 - margin.left - margin.right,
-		height = 500 - margin.top - margin.bottom;
+
 	var start = function(options){
 
 		svg = init(options);
-		var x = d3.time.scale()
-			.range([0, width]);
-
-		var y = d3.scale.linear()
-			.range([height, 0]);
-
-		var xAxis = d3.svg.axis()
-			.scale(x)
-			.tickSize(-height);
-
-		var yAxis = d3.svg.axis()
-			.scale(y)
-			.ticks(20)
-			.orient('left');
+		margin = settings.sizes.margins;
+		width  = settings.sizes.width;
+		height = settings.sizes.height;
+		x = settings.scale.x;
+		y = settings.scale.y;
+		xAxis = settings.axis.xAxis;
+		yAxis = settings.axis.yAxis;
 
 		var area = d3.svg.area()
 			.interpolate('monotone')
