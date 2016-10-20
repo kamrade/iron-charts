@@ -1,5 +1,4 @@
 module.exports = {
-	control: 42,
 	sizes: {
 		width: 960,
 		height: 500,
@@ -10,5 +9,8 @@ module.exports = {
 			left: 40
 		}
 	},
-	el: '.chart'
+	el: '.chart',
+	scale: {},
+	axis: {},
+	shapes: {}
 };

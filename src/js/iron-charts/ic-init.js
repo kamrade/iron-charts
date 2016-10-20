@@ -43,12 +43,6 @@ module.exports = function(options){
 				.attr('height', settings.sizes.height + settings.sizes.margins.top + settings.sizes.margins.bottom)
 				.append('g')
 				.attr('transform', 'translate(' + settings.sizes.margins.left + ', ' + settings.sizes.margins.top + ')');
-
-			settings.svg.append('clipPath')
-				.attr('id', 'clip')
-				.append('rect')
-				.attr('width', settings.sizes.width)
-				.attr('height', settings.sizes.height);
 		}
 	} else {
 		console.log('Use default');
