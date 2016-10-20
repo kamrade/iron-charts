@@ -2,107 +2,15 @@ var d3 = require("d3");
 
 var settings = require('./ic-settings');
 var init     = require('./ic-init');
-
-var margin, width, height, svg, el, $el, x, y, xAxis, yAxis;
-var parse = d3.time.format("%b %Y").parse;
+var reload   = require('./ic-reload');
+var svg;
 
 module.exports = (function(){
 
 	var start = function(options){
-
 		svg = init(options);
-		margin = settings.sizes.margins;
-		width  = settings.sizes.width;
-		height = settings.sizes.height;
-		x = settings.scale.x;
-		y = settings.scale.y;
-		xAxis = settings.axis.xAxis;
-		yAxis = settings.axis.yAxis;
-
-		var area = d3.svg.area()
-			.interpolate('monotone')
-			.x(function(d){ return x(d.date); })
-			.y0(height)
-			.y1(function(d){ return y(d.price); });
-
-		var line = d3.svg.line()
-			.interpolate('monotone')
-			.x(function(d){
-				return x(d.date);
-			})
-			.y(function(d){
-				return y(d.price);
-			});
-
-		svg = svg.append('svg')
-				.attr('width', width + margin.left + margin.right)
-				.attr('height', height + margin.top + margin.bottom)
-			.append('g')
-				.attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
-
-		svg.append('clipPath')
-				.attr('id', 'clip')
-			.append('rect')
-				.attr('width', width)
-				.attr('height', height);
-
-		d3.csv('../data/data.csv', type, function(error, data){
-			if(error) throw error;
-
-			x.domain([data[0].date, data[data.length - 1].date]);
-			y.domain([0, d3.max(data, function(d){ return d.price; })]).nice();
-
-			svg.datum(data)
-				.on('click', click);
-
-			svg.append('path')
-				.attr('class', 'area')
-				// .attr('fill', 'rgba(231, 106, 73, 0.8)')
-				.attr('fill', 'url(#Gradient1)')
-				.attr('clip-path', 'url(#clip)')
-				.attr('d', area);
-
-			svg.append('g')
-				.attr('class', 'x axis')
-				.attr('transform', 'translate(0,' + height + ')')
-				.call(xAxis);
-
-			svg.append('g')
-				.attr('class', 'y axis')
-				.call(yAxis);
-
-			svg.append('path')
-				.attr('class', 'line')
-				.attr('clip-path', 'url(#clip)')
-				.attr('d', line);
-
-			svg.append('text')
-				.attr('x', width - 6)
-				.attr('y', height - 6)
-				.style('text-anchor', 'end')
-				.text(data[0].symbol);
-
-			function click(){
-				var n = data.length - 1,
-					i = Math.floor(Math.random() * n/2),
-					j = i + Math.floor(Math.random() * n/2) + 1;
-				x.domain([data[i].date, data[j].date]);
-				var t = svg.transition().duration(450);
-				t.select('.x.axis').call(xAxis);
-				t.select('.area').attr('d', area);
-				t.select('.line').attr('d', line);
-			}
-
-		});
-
+		reload('../data/data.csv');
 	};
-
-
-	function type(d) {
-		d.date = parse(d.date);
-		d.price = +d.price;
-		if (d.symbol === "S&P 500") return d;
-	}
 
 	return {
 		start: start

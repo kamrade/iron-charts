@@ -1,13 +1,19 @@
+h1
+	font-weight: 200
+
 .charts
-	border: 3px solid red
+	// border: 3px solid red
 	box-sizing: border-box
 
 svg
 	font: 10px sans-serif
 
+.area
+	cursor: pointer
+
 path.line
 	fill: none
-	stroke: darken(red, 20%)
+	stroke: darken(#3dffee, 20%)
 	stroke-width: 1.5px
 
 .axis
@@ -23,3 +29,7 @@ path.line
 .y.axis path
 	fill: none
 	stroke: #000
+
+.tick
+	text
+		opacity: .6
