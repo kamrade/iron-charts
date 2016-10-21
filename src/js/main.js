@@ -7,8 +7,8 @@ var ironCharts = require('./iron-charts/iron-charts');
 
 var icOptions = {
 	sizes: {
-		width: 900,
-		height: 300,
+		width: 600,
+		height: 200,
 		margins: {
 			top: 20,
 			bottom: 40,
@@ -24,9 +24,6 @@ var icOptions = {
 
 ironCharts.start(icOptions, '../data/data.csv');
 
-
-
-
 var redrawBtn = document.getElementById('redraw');
 redrawBtn.addEventListener('click', function(){
 	ironCharts.redraw();
@@ -36,3 +33,10 @@ var clearBtn = document.getElementById('clear');
 clearBtn.addEventListener('click', function(){
 	ironCharts.clear();
 }, false);
+
+
+// vm.getHistory("#history-chart-d3", data, type, {
+// 	nodeRadius: 4,
+// 	gap: 1.5,
+// 	margins: {top: 20, right: 20, bottom: 64, left: 50}
+// });
