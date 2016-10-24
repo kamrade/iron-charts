@@ -1,6 +1,7 @@
 var d3 = require("d3");
 var classie = require("./classie");
 var settings = require("./settings");
+
 console.log( "d3 version is " + d3.version );
 
 var ironCharts = require('./iron-charts/iron-charts');
@@ -22,7 +23,7 @@ var icOptions = {
 	shapes: {}
 };
 
-ironCharts.start(icOptions, '../data/data.csv');
+ironCharts.start(icOptions, '../data/data.csv', 'csv');
 
 var redrawBtn = document.getElementById('redraw');
 redrawBtn.addEventListener('click', function(){
@@ -35,7 +36,8 @@ clearBtn.addEventListener('click', function(){
 }, false);
 
 
-// vm.getHistory("#history-chart-d3", data, type, {
+// var historyChart = require('./history-chart/history-chart');
+// historyChart.start("#history-chart-d3", '/data/transactions.json', 'payments', {
 // 	nodeRadius: 4,
 // 	gap: 1.5,
 // 	margins: {top: 20, right: 20, bottom: 64, left: 50}

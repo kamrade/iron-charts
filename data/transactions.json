@@ -1,0 +1,399 @@
+[
+    {
+        "total": 48665,
+        "CAPTURED": 1174,
+        "DECLINED": 11677,
+        "date": "2016-05-23T14:00:00.000Z"
+    },
+    {
+        "total": 92601,
+        "CAPTURED": 38057,
+        "DECLINED": 2302,
+        "CHARGEBACK": 358,
+        "date": "2016-05-24T14:00:00.000Z"
+    },
+    {
+        "total": 91704,
+        "CAPTURED": 2767,
+        "DECLINED": 2497,
+        "date": "2016-05-31T14:00:00.000Z"
+    },
+    {
+        "total": 2525,
+        "CAPTURED": 79790,
+        "DECLINED": 3802,
+        "date": "2016-06-01T14:00:00.000Z"
+    },
+    {
+        "total": 61150,
+        "CAPTURED": 83739,
+        "DECLINED": 8385,
+        "VOIDED": 244,
+        "date": "2016-06-03T14:00:00.000Z"
+    },
+    {
+        "total": 59788,
+        "CAPTURED": 57259,
+        "DECLINED": 11478,
+        "VOIDED": 941,
+        "date": "2016-06-04T14:00:00.000Z"
+    },
+    {
+        "total": 33262,
+        "CAPTURED": 62911,
+        "DECLINED": 2926,
+        "date": "2016-06-05T14:00:00.000Z"
+    },
+    {
+        "total": 61288,
+        "CAPTURED": 85723,
+        "DECLINED": 11686,
+        "CHARGEBACK": 219,
+        "date": "2016-06-06T14:00:00.000Z"
+    },
+    {
+        "total": 48508,
+        "CAPTURED": 39716,
+        "DECLINED": 1647,
+        "date": "2016-06-13T14:00:00.000Z"
+    },
+    {
+        "total": 92331,
+        "CAPTURED": 20602,
+        "DECLINED": 2799,
+        "date": "2016-06-15T14:00:00.000Z"
+    },
+    {
+        "total": 39984,
+        "CAPTURED": 82067,
+        "DECLINED": 14008,
+        "VOIDED": 941,
+        "date": "2016-06-18T14:00:00.000Z"
+    },
+    {
+        "total": 5893,
+        "CAPTURED": 28120,
+        "DECLINED": 13484,
+        "date": "2016-06-19T14:00:00.000Z"
+    },
+    {
+        "total": 9347,
+        "CAPTURED": 20490,
+        "DECLINED": 4767,
+        "date": "2016-06-21T14:00:00.000Z"
+    },
+    {
+        "total": 99237,
+        "CAPTURED": 99583,
+        "DECLINED": 1455,
+        "date": "2016-06-22T14:00:00.000Z"
+    },
+    {
+        "total": 77884,
+        "CAPTURED": 20447,
+        "DECLINED": 11832,
+        "date": "2016-06-25T14:00:00.000Z"
+    },
+    {
+        "total": 70453,
+        "CAPTURED": 93980,
+        "DECLINED": 8921,
+        "VOIDED": 643,
+        "date": "2016-06-26T14:00:00.000Z"
+    },
+    {
+        "total": 82053,
+        "CAPTURED": 56049,
+        "DECLINED": 11030,
+        "VOIDED": 121,
+        "date": "2016-06-27T14:00:00.000Z"
+    },
+    {
+        "total": 9919,
+        "CAPTURED": 50208,
+        "DECLINED": 9958,
+        "date": "2016-06-28T14:00:00.000Z"
+    },
+    {
+        "total": 82352,
+        "CAPTURED": 3945,
+        "DECLINED": 6693,
+        "date": "2016-06-30T14:00:00.000Z"
+    },
+    {
+        "total": 58505,
+        "CAPTURED": 9292,
+        "DECLINED": 4434,
+        "date": "2016-07-01T14:00:00.000Z"
+    },
+    {
+        "total": 43249,
+        "CAPTURED": 33939,
+        "DECLINED": 805,
+        "date": "2016-07-02T14:00:00.000Z"
+    },
+    {
+        "total": 59326,
+        "CAPTURED": 39494,
+        "DECLINED": 10174,
+        "date": "2016-07-03T14:00:00.000Z"
+    },
+    {
+        "total": 9257,
+        "CAPTURED": 92505,
+        "DECLINED": 9525,
+        "date": "2016-07-05T14:00:00.000Z"
+    },
+    {
+        "total": 65336,
+        "CAPTURED": 86858,
+        "DECLINED": 10213,
+        "date": "2016-07-12T14:00:00.000Z"
+    },
+    {
+        "total": 8770,
+        "CAPTURED": 11265,
+        "DECLINED": 6802,
+        "date": "2016-07-15T14:00:00.000Z"
+    },
+    {
+        "total": 89380,
+        "CAPTURED": 93113,
+        "DECLINED": 10894,
+        "CHARGEBACK": 386,
+        "date": "2016-07-16T14:00:00.000Z"
+    },
+    {
+        "total": 22863,
+        "CAPTURED": 91408,
+        "DECLINED": 13928,
+        "VOIDED": 831,
+        "date": "2016-07-17T14:00:00.000Z"
+    },
+    {
+        "total": 24486,
+        "CAPTURED": 46405,
+        "DECLINED": 3775,
+        "date": "2016-07-18T14:00:00.000Z"
+    },
+    {
+        "total": 35394,
+        "CAPTURED": 79016,
+        "DECLINED": 3176,
+        "date": "2016-07-19T14:00:00.000Z"
+    },
+    {
+        "total": 48937,
+        "CAPTURED": 46752,
+        "DECLINED": 8772,
+        "CHARGEBACK": 137,
+        "date": "2016-07-20T14:00:00.000Z"
+    },
+    {
+        "total": 11674,
+        "CAPTURED": 16950,
+        "DECLINED": 10709,
+        "date": "2016-07-21T14:00:00.000Z"
+    },
+    {
+        "total": 78791,
+        "CAPTURED": 61207,
+        "DECLINED": 3953,
+        "date": "2016-07-25T14:00:00.000Z"
+    },
+    {
+        "total": 39412,
+        "CAPTURED": 81914,
+        "DECLINED": 2577,
+        "VOIDED": 683,
+        "date": "2016-07-26T14:00:00.000Z"
+    },
+    {
+        "total": 92337,
+        "CAPTURED": 23807,
+        "DECLINED": 10354,
+        "CHARGEBACK": 911,
+        "date": "2016-07-28T14:00:00.000Z"
+    },
+    {
+        "total": 1504,
+        "CAPTURED": 76546,
+        "DECLINED": 4499,
+        "date": "2016-07-30T14:00:00.000Z"
+    },
+    {
+        "total": 36067,
+        "CAPTURED": 54445,
+        "DECLINED": 6666,
+        "date": "2016-08-03T14:00:00.000Z"
+    },
+    {
+        "total": 93236,
+        "CAPTURED": 23458,
+        "DECLINED": 2389,
+        "date": "2016-08-04T14:00:00.000Z"
+    },
+    {
+        "total": 36678,
+        "CAPTURED": 91928,
+        "DECLINED": 13252,
+        "date": "2016-08-05T14:00:00.000Z"
+    },
+    {
+        "total": 67400,
+        "CAPTURED": 90370,
+        "DECLINED": 5143,
+        "date": "2016-08-08T14:00:00.000Z"
+    },
+    {
+        "total": 91820,
+        "CAPTURED": 16867,
+        "DECLINED": 12033,
+        "date": "2016-08-10T14:00:00.000Z"
+    },
+    {
+        "total": 26399,
+        "CAPTURED": 77711,
+        "DECLINED": 7161,
+        "date": "2016-08-11T14:00:00.000Z"
+    },
+    {
+        "total": 19085,
+        "CAPTURED": 85412,
+        "DECLINED": 14714,
+        "date": "2016-08-13T14:00:00.000Z"
+    },
+    {
+        "total": 88994,
+        "CAPTURED": 77210,
+        "DECLINED": 8764,
+        "date": "2016-08-14T14:00:00.000Z"
+    },
+    {
+        "total": 19719,
+        "CAPTURED": 21003,
+        "DECLINED": 13007,
+        "CHARGEBACK": 866,
+        "date": "2016-08-15T14:00:00.000Z"
+    },
+    {
+        "total": 62500,
+        "CAPTURED": 51468,
+        "DECLINED": 4054,
+        "date": "2016-08-16T14:00:00.000Z"
+    },
+    {
+        "total": 16212,
+        "CAPTURED": 40194,
+        "DECLINED": 13928,
+        "date": "2016-08-17T14:00:00.000Z"
+    },
+    {
+        "total": 90589,
+        "CAPTURED": 19975,
+        "DECLINED": 14720,
+        "date": "2016-08-18T14:00:00.000Z"
+    },
+    {
+        "total": 2151,
+        "CAPTURED": 85686,
+        "DECLINED": 562,
+        "date": "2016-08-19T14:00:00.000Z"
+    },
+    {
+        "total": 61736,
+        "CAPTURED": 46943,
+        "DECLINED": 4425,
+        "date": "2016-08-22T14:00:00.000Z"
+    },
+    {
+        "total": 18633,
+        "CAPTURED": 63296,
+        "DECLINED": 4578,
+        "date": "2016-08-23T14:00:00.000Z"
+    },
+    {
+        "total": 48319,
+        "CAPTURED": 95637,
+        "DECLINED": 5161,
+        "date": "2016-08-25T14:00:00.000Z"
+    },
+    {
+        "total": 9831,
+        "CAPTURED": 57186,
+        "DECLINED": 10474,
+        "VOIDED": 744,
+        "date": "2016-08-27T14:00:00.000Z"
+    },
+    {
+        "total": 8494,
+        "CAPTURED": 9106,
+        "DECLINED": 4750,
+        "date": "2016-08-30T14:00:00.000Z"
+    },
+    {
+        "total": 23672,
+        "CAPTURED": 17146,
+        "DECLINED": 7786,
+        "date": "2016-09-02T14:00:00.000Z"
+    },
+    {
+        "total": 81328,
+        "CAPTURED": 44704,
+        "DECLINED": 9248,
+        "date": "2016-09-04T14:00:00.000Z"
+    },
+    {
+        "total": 74385,
+        "CAPTURED": 13114,
+        "DECLINED": 5704,
+        "CHARGEBACK": 250,
+        "date": "2016-09-08T14:00:00.000Z"
+    },
+    {
+        "total": 65487,
+        "CAPTURED": 69134,
+        "DECLINED": 11153,
+        "date": "2016-09-09T14:00:00.000Z"
+    },
+    {
+        "total": 12922,
+        "CAPTURED": 38053,
+        "DECLINED": 1624,
+        "CHARGEBACK": 41,
+        "date": "2016-09-10T14:00:00.000Z"
+    },
+    {
+        "total": 6321,
+        "CAPTURED": 17106,
+        "DECLINED": 4868,
+        "date": "2016-09-11T14:00:00.000Z"
+    },
+    {
+        "total": 51585,
+        "CAPTURED": 67889,
+        "DECLINED": 506,
+        "date": "2016-09-13T14:00:00.000Z"
+    },
+    {
+        "total": 67869,
+        "CAPTURED": 19776,
+        "DECLINED": 9232,
+        "VOIDED": 329,
+        "date": "2016-09-14T14:00:00.000Z"
+    },
+    {
+        "total": 28869,
+        "CAPTURED": 51943,
+        "DECLINED": 12292,
+        "date": "2016-09-15T14:00:00.000Z"
+    },
+    {
+        "total": 46100,
+        "CAPTURED": 77097,
+        "DECLINED": 12347,
+        "VOIDED": 273,
+        "CHARGEBACK": 162,
+        "date": "2016-09-16T14:00:00.000Z"
+    }
+]

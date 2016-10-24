@@ -2,12 +2,6 @@ var d3 = require("d3");
 var settings = require("./settings");
 
 var historyGraph = (function(){
-
-// *******************************************************************
-// *************************** DATA **********************************
-// *******************************************************************
-
-	// SVG parent element
 	var $el;
 	var el;
 	var tooltip;
@@ -67,9 +61,7 @@ var historyGraph = (function(){
 	var parseDate = d3.time.format("%Y-%m-%d").parse;
 	var formatDate = d3.time.format("%b %d");
 
-// *******************************************************************
 // ************************ FUNCTIONS ********************************
-// *******************************************************************
 
 // CONNECT SVG
 	var connectSVG = function(element, type, options) {
@@ -87,7 +79,6 @@ var historyGraph = (function(){
 		typeOfTransaction = type;
 	};
 
-// INIT
 	var init = function(){
 		width = $el.clientWidth;
 		height = $el.clientHeight;
@@ -96,23 +87,19 @@ var historyGraph = (function(){
 		y = d3.scale.linear().range([height - margin.bottom, margin.top]);
 
 		xAxis = d3.svg.axis()
-				.scale(x)
-				.orient("bottom")
-				.innerTickSize(-height + margin.top + margin.bottom)
-				.outerTickSize(0)
-				.tickPadding(10)
-				.ticks(d3.time.days, 1)
-				.tickFormat(formatDate)
-				;
-
+			.scale(x)
+			.orient("bottom")
+			.innerTickSize(-height + margin.top + margin.bottom)
+			.outerTickSize(0)
+			.tickPadding(10)
+			.ticks(d3.time.days, 1)
+			.tickFormat(formatDate);
 		yAxis = d3.svg.axis()
 			.scale(y)
 			.orient("left")
 			.innerTickSize(-width + margin.left + margin.right)
 			.outerTickSize(0)
-			.tickPadding(10)
-			;
-
+			.tickPadding(10);
 		svg = d3.select(el)
 			.append("svg")
 			.classed("history-svg", true)
@@ -121,9 +108,7 @@ var historyGraph = (function(){
 		_insertTooltip();
 	};
 
-// NORMALIZE DATA
 	var normalizeData = function(data){
-
 		data.map(function(d){
 			if(typeOfTransaction === "all"){
 				d[ values.all.payments ] = d[ values.all.payments ]? d[ values.all.payments ] : 0;
@@ -191,18 +176,13 @@ var historyGraph = (function(){
 
 	// DRAW LINE
 	var drawLine = function(key, data){
-
 		// CAPTURED PATH
 		// var PathGroup = svg.append("g").attr("class", "captured-path");
 		var PathGroup = svg.append("g").attr("class", "path-" + typeOfTransaction + "-" +  key);
-
 		var lineCaptured = d3.svg.line()
-			// .interpolate("cardinal")
-			// .interpolate("monotone")
 			.interpolate("linear")
 			.x(function(d) { return x(d.date) + barWidth/2; })
 			.y(function(d) { return y( d[ values[typeOfTransaction][key] ] ); });
-
 		PathGroup.selectAll("path")
 			.data([ data ])
 			.enter()
@@ -211,8 +191,6 @@ var historyGraph = (function(){
 				.attr("fill", "none")
 				.attr("stroke", colors.color[typeOfTransaction][key])
 				.attr("stroke-width", gap);
-
-
 		var dots = svg.append("g")
 			.classed(("dots-" + typeOfTransaction + "-" + key), true).selectAll("circle .nodes")
 			.data(data)
@@ -333,12 +311,8 @@ var historyGraph = (function(){
 		}
 	};
 
-// ********************************************************
 // **********************   TOOLS   ***********************
-// ********************************************************
 
-
-	// аналог clear()
 	var destroy = function(){
 		if (document.querySelector(".history-svg")) {
 			var elForRemove = document.querySelector(".history-svg");
@@ -372,9 +346,7 @@ var historyGraph = (function(){
 		$el.appendChild( preloader );
 	}
 
-// ********************************************************
 // **********************   API   *************************
-// ********************************************************
 
 	var start = function(element, data, type, options){
 		connectSVG(element, type, options);
@@ -393,7 +365,6 @@ var historyGraph = (function(){
 			}
 		}
 	}
-
 
 	var resizeStart = function(){
 		if( dataMain ){

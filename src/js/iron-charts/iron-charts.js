@@ -9,9 +9,9 @@ var svg;
 
 module.exports = (function(){
 
-	var start = function(options, dataPath){
+	var start = function(options, dataPath, dataType){
 		svg = init(options);
-		reload(dataPath);
+		reload(dataPath, dataType);
 	};
 
 	return {
