@@ -8,7 +8,7 @@ var ironCharts = require('./iron-charts/iron-charts');
 
 var icOptions = {
 	sizes: {
-		width: 600,
+		width: 960,
 		height: 200,
 		margins: {
 			top: 20,
@@ -23,7 +23,7 @@ var icOptions = {
 	shapes: {}
 };
 
-ironCharts.start(icOptions, '../data/data.csv', 'csv');
+ironCharts.start(icOptions, '../data/transactions.json', 'json');
 
 var redrawBtn = document.getElementById('redraw');
 redrawBtn.addEventListener('click', function(){

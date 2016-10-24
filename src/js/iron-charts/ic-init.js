@@ -21,6 +21,7 @@ module.exports = function(options){
 			settings.axis.yAxis = d3.svg.axis()
 				.scale(settings.scale.y)
 				.ticks(4)
+				.tickSize(-1*settings.sizes.width)
 				.orient('left');
 			settings.shapes = {};
 
@@ -28,12 +29,32 @@ module.exports = function(options){
 				.interpolate('monotone')
 				.x(function(d){ return settings.scale.x(d.date) })
 				.y0(settings.sizes.height)
-				.y1(function(d){ return settings.scale.y(d.price); });
+				.y1(function(d){ return settings.scale.y(d.total); });
 
-			settings.shapes.line = d3.svg.line()
+			settings.shapes.lineTotal = d3.svg.line()
 				.interpolate('monotone')
 				.x(function(d){ return settings.scale.x(d.date); })
-				.y(function(d){ return settings.scale.y(d.price); });
+				.y(function(d){ return settings.scale.y(d.total); });
+
+			settings.shapes.lineCaptured = d3.svg.line()
+				.interpolate('monotone')
+				.x(function(d){ return settings.scale.x(d.date); })
+				.y(function(d){ return settings.scale.y(d.CAPTURED); });
+
+			settings.shapes.lineDeclined = d3.svg.line()
+				.interpolate('monotone')
+				.x(function(d){ return settings.scale.x(d.date); })
+				.y(function(d){ return settings.scale.y(d.DECLINED); });
+
+			settings.shapes.lineVoided = d3.svg.line()
+				.interpolate('monotone')
+				.x(function(d){ return settings.scale.x(d.date); })
+				.y(function(d){ return settings.scale.y(d.VOIDED); });
+
+			settings.shapes.lineChargeback = d3.svg.line()
+				.interpolate('monotone')
+				.x(function(d){ return settings.scale.x(d.date); })
+				.y(function(d){ return settings.scale.y(d.CHARGEBACK); });
 		}
 		if(options.el) {
 			settings.el = options.el;

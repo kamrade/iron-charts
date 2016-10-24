@@ -11,16 +11,31 @@ svg
 .area
 	cursor: pointer
 
+// раскраска линий графика
+path.line-total
+	stroke: #aaaaaa
+
+path.line-captured
+	stroke: darken(#3dffee, 20%)
+
+path.line-declined
+	stroke: #3d51ff
+
+path.line-voided
+	stroke: #adadad
+
+path.line-chargeback
+	stroke: #dd1f1f
+
 path.line
 	fill: none
-	stroke: darken(#3dffee, 20%)
 	stroke-width: 1.5px
 
 .axis
 	shape-rendering: crispEdges
 
 .x.axis line
-	stroke: #fff
+	stroke: #d6d6d6
 
 .x.axis path
 	display: none
@@ -29,6 +44,10 @@ path.line
 .y.axis path
 	fill: none
 	stroke: #000
+
+//тут еще мы скрываем по сути y.axis
+.y.axis line, .y.axis path
+	stroke: #d6d6d6
 
 .tick
 	text

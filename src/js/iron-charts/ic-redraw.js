@@ -12,7 +12,8 @@ module.exports = function() {
 
 	settings.svg.datum(settings.data).on('click', click);
 
-	settings.svg.append('path')
+	var groupArea = settings.svg.append('g');
+	groupArea.append('path')
 		.attr('class', 'area')
 		.attr('fill', 'url(#Gradient1)')
 		.attr('clip-path', 'url(#clip)')
@@ -27,16 +28,41 @@ module.exports = function() {
 		.attr('class', 'y axis')
 		.call(settings.axis.yAxis);
 
-	settings.svg.append('path')
-		.attr('class', 'line')
+	// var groupLineTotal = settings.svg.append('g');
+	// groupLineTotal.append('path')
+	// 	.attr('class', 'line line-total')
+	// 	.attr('clip-path', 'url(#clip)')
+	// 	.attr('d', settings.shapes.lineTotal);
+
+	var groupLineCaptured = settings.svg.append('g');
+	groupLineCaptured.append('path')
+		.attr('class', 'line line-captured')
 		.attr('clip-path', 'url(#clip)')
-		.attr('d', settings.shapes.line);
+		.attr('d', settings.shapes.lineCaptured);
+
+	var groupLineDeclined = settings.svg.append('g');
+	groupLineDeclined.append('path')
+		.attr('class', 'line line-declined')
+		.attr('clip-path', 'url(#clip)')
+		.attr('d', settings.shapes.lineDeclined);
+
+	var groupLineVoided = settings.svg.append('g');
+	groupLineVoided.append('path')
+		.attr('class', 'line line-voided')
+		.attr('clip-path', 'url(#clip)')
+		.attr('d', settings.shapes.lineVoided);
+
+	var groupLineChargeback = settings.svg.append('g');
+	groupLineChargeback.append('path')
+		.attr('class', 'line line-chargeback')
+		.attr('clip-path', 'url(#clip)')
+		.attr('d', settings.shapes.lineChargeback);
 
 	settings.svg.append('text')
 		.attr('x', settings.sizes.width - 6)
 		.attr('y', settings.sizes.height - 6)
 		.style('text-anchor', 'end')
-		.text(settings.data[0].symbol);
+		.text('Look at this text!');
 };
 
 
@@ -49,5 +75,9 @@ function click(){
 	var t = settings.svg.transition().duration(450);
 	t.select('.x.axis').call(settings.axis.xAxis);
 	t.select('.area').attr('d', settings.shapes.area);
-	t.select('.line').attr('d', settings.shapes.line);
+	// t.select('.line-total').attr('d', settings.shapes.lineTotal);
+	t.select('.line-captured').attr('d', settings.shapes.lineCaptured);
+	t.select('.line-declined').attr('d', settings.shapes.lineDeclined);
+	t.select('.line-voided').attr('d', settings.shapes.lineVoided);
+	t.select('.line-chargeback').attr('d', settings.shapes.lineChargeback);
 }
