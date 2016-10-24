@@ -12,11 +12,12 @@ module.exports = function() {
 		.on('zoom', zoomed);
 
 	settings.svg = settings.svg.append('svg')
+		.call(settings.zoom)
 		.attr('width', settings.sizes.width + settings.sizes.margins.left + settings.sizes.margins.right)
 		.attr('height', settings.sizes.height + settings.sizes.margins.top + settings.sizes.margins.bottom)
 		.append('g')
 		.attr('transform', 'translate(' + settings.sizes.margins.left + ', ' + settings.sizes.margins.top + ')')
-		.call(settings.zoom);
+		;
 
 	settings.svg.append('clipPath')
 		.attr('id', 'clip')
@@ -27,6 +28,8 @@ module.exports = function() {
 	settings.svg.datum(settings.data)
 		// .on('dblclick', dblclick)
 		;
+
+	settings.zoom.scale(5);
 
 	var groupArea = settings.svg.append('g');
 	groupArea.append('path')
@@ -66,8 +69,9 @@ module.exports = function() {
 
 var zoomed = function() {
 	console.log(' +++ zooming +++ ');
-	// console.log(d3.event.translate);
-	// console.log(d3.event.scale);
+	console.log(d3.event.translate);
+	console.log(d3.event.scale);
+
 	settings.svg.select(".x.axis").call(settings.axis.xAxis);
 	settings.svg.select(".y.axis").call(settings.axis.yAxis);
 	settings.svg.select('.area').attr('d', settings.shapes.area);
