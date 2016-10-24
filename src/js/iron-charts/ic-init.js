@@ -26,44 +26,32 @@ module.exports = function(options){
 			settings.shapes = {};
 
 			settings.shapes.area = d3.svg.area()
-				.interpolate('monotone')
+				.interpolate('linear')
 				.x(function(d){ return settings.scale.x(d.date) })
 				.y0(settings.sizes.height)
 				.y1(function(d){ return settings.scale.y(d.total); });
 
 			settings.shapes.lineTotal = d3.svg.line()
-				.interpolate('monotone')
+				.interpolate('linear')
 				.x(function(d){ return settings.scale.x(d.date); })
 				.y(function(d){ return settings.scale.y(d.total); });
 
 			settings.shapes.lineCaptured = d3.svg.line()
-				.interpolate('monotone')
+				.interpolate('linear')
 				.x(function(d){ return settings.scale.x(d.date); })
 				.y(function(d){ return settings.scale.y(d.CAPTURED); });
 
 			settings.shapes.lineDeclined = d3.svg.line()
-				.interpolate('monotone')
+				.interpolate('linear')
 				.x(function(d){ return settings.scale.x(d.date); })
 				.y(function(d){ return settings.scale.y(d.DECLINED); });
 
-			settings.shapes.lineVoided = d3.svg.line()
-				.interpolate('monotone')
-				.x(function(d){ return settings.scale.x(d.date); })
-				.y(function(d){ return settings.scale.y(d.VOIDED); });
 
-			settings.shapes.lineChargeback = d3.svg.line()
-				.interpolate('monotone')
-				.x(function(d){ return settings.scale.x(d.date); })
-				.y(function(d){ return settings.scale.y(d.CHARGEBACK); });
 		}
 		if(options.el) {
 			settings.el = options.el;
 			settings.svg = d3.select(settings.el);
-			settings.svg = settings.svg.append('svg')
-				.attr('width', settings.sizes.width + settings.sizes.margins.left + settings.sizes.margins.right)
-				.attr('height', settings.sizes.height + settings.sizes.margins.top + settings.sizes.margins.bottom)
-				.append('g')
-				.attr('transform', 'translate(' + settings.sizes.margins.left + ', ' + settings.sizes.margins.top + ')');
+
 		}
 	} else {
 		console.log('Use default');

@@ -32,9 +32,7 @@ module.exports = function(dataPath, dataType) {
 	} else if(dataType === 'json') {
 		d3.json(dataPath, function(error, data) {
 			if(error) throw error;
-
 			data = normalize(data);
-
 			if(settings.scale) {
 				settings.scale.x.domain([ data[0].date, data[data.length - 1].date ]);
 				settings.scale.y.domain([ 0, d3.max(data, function(d){ return d.total; }) ]).nice();
